@@ -1,0 +1,44 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. GRADE-ASSIGN.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+
+01 WS-MARKS PIC 9(3).
+01 WS-GRADE PIC X.
+
+PROCEDURE DIVISION.
+
+DISPLAY "ENTER MARKS (0 - 100): ".
+ACCEPT WS-MARKS.
+
+IF WS-MARKS >= 90
+   MOVE 'A' TO WS-GRADE
+
+ELSE
+   IF WS-MARKS >= 80
+      MOVE 'B' TO WS-GRADE
+
+   ELSE
+      IF WS-MARKS >= 70
+         MOVE 'C' TO WS-GRADE
+
+      ELSE
+         IF WS-MARKS >= 60
+            MOVE 'D' TO WS-GRADE
+
+         ELSE
+            IF WS-MARKS >= 50
+               MOVE 'E' TO WS-GRADE
+
+            ELSE
+               MOVE 'F' TO WS-GRADE
+            END-IF
+         END-IF
+      END-IF
+   END-IF
+END-IF.
+
+DISPLAY "GRADE: " WS-GRADE.
+
+STOP RUN.
